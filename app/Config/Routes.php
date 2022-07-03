@@ -49,6 +49,13 @@ $routes->group('admin', function ($routes) {
     $routes->get('clients/(:num)/edit', 'Admin\ClientController::edit/$1', ["as" => "admin.clients.edit"]);
     $routes->put('clients/(:num)', 'Admin\ClientController::update/$1', ["as" => "admin.clients.update"]);
     $routes->delete('clients/(:num)', 'Admin\ClientController::destroy/$1', ["as" => "admin.clients.destroy"]);
+
+    $routes->get('news', 'Admin\NewsController::index', ["as" => "admin.news.index"]);
+    $routes->post('news', 'Admin\NewsController::store', ["as" => "admin.news.store"]);
+    $routes->get('news/create', 'Admin\NewsController::create', ["as" => "admin.news.create"]);
+    $routes->get('news/(:num)/edit', 'Admin\NewsController::edit/$1', ["as" => "admin.news.edit"]);
+    $routes->put('news/(:num)', 'Admin\NewsController::update/$1', ["as" => "admin.news.update"]);
+    $routes->delete('news/(:num)', 'Admin\NewsController::destroy/$1', ["as" => "admin.news.destroy"]);
 });
 
 /*

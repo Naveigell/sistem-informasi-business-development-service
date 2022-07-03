@@ -12,8 +12,8 @@
             <li class="menu-header">Users</li>
             <li><a class="nav-link" href="<?= route_to('admin.consultants.index'); ?>"><i class="fa fa-users"></i> <span>Konsultan</span></a></li>
             <li><a class="nav-link" href="<?= route_to('admin.clients.index'); ?>"><i class="fa fa-male"></i> <span>Klien</span></a></li>
-            <li class="menu-header">Pemesanan</li>
-            <li><a class="nav-link" href="<?= route_to('admin.bookings.index'); ?>"><i class="fa fa-link"></i> <span>Booking</span></a></li>
+            <li class="menu-header">Information</li>
+            <li><a class="nav-link" href="<?= route_to('admin.news.index'); ?>"><i class="fa fa-newspaper"></i> <span>Berita</span></a></li>
         </ul>
     </aside>
 </div>
