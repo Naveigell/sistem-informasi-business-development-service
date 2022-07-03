@@ -35,7 +35,21 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->group('admin', function ($routes) {
+    $routes->get('consultants', 'Admin\ConsultantController::index', ["as" => "admin.consultants.index"]);
+    $routes->post('consultants', 'Admin\ConsultantController::store', ["as" => "admin.consultants.store"]);
+    $routes->get('consultants/create', 'Admin\ConsultantController::create', ["as" => "admin.consultants.create"]);
+    $routes->get('consultants/(:num)/edit', 'Admin\ConsultantController::edit/$1', ["as" => "admin.consultants.edit"]);
+    $routes->put('consultants/(:num)', 'Admin\ConsultantController::update/$1', ["as" => "admin.consultants.update"]);
+    $routes->delete('consultants/(:num)', 'Admin\ConsultantController::destroy/$1', ["as" => "admin.consultants.destroy"]);
+
+    $routes->get('clients', 'Admin\ClientController::index', ["as" => "admin.clients.index"]);
+    $routes->post('clients', 'Admin\ClientController::store', ["as" => "admin.clients.store"]);
+    $routes->get('clients/create', 'Admin\ClientController::create', ["as" => "admin.clients.create"]);
+    $routes->get('clients/(:num)/edit', 'Admin\ClientController::edit/$1', ["as" => "admin.clients.edit"]);
+    $routes->put('clients/(:num)', 'Admin\ClientController::update/$1', ["as" => "admin.clients.update"]);
+    $routes->delete('clients/(:num)', 'Admin\ClientController::destroy/$1', ["as" => "admin.clients.destroy"]);
+});
 
 /*
  * --------------------------------------------------------------------
