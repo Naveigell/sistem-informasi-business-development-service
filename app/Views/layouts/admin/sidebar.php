@@ -14,6 +14,9 @@
             <li><a class="nav-link" href="<?= route_to('admin.clients.index'); ?>"><i class="fa fa-male"></i> <span>Klien</span></a></li>
             <li class="menu-header">Information</li>
             <li><a class="nav-link" href="<?= route_to('admin.news.index'); ?>"><i class="fa fa-newspaper"></i> <span>Berita</span></a></li>
+            <li class="menu-header">Organization</li>
+            <li><a class="nav-link" href="<?= route_to('admin.histories.edit', 1); ?>"><i class="fa fa-ankh"></i> <span>Sejarah</span></a></li>
+            <li><a class="nav-link" href="<?= route_to('admin.vision-missions.edit', 1); ?>"><i class="fa fa-flag"></i> <span>Visi & Misi</span></a></li>
         </ul>
     </aside>
 </div>

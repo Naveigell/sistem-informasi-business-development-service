@@ -12,5 +12,6 @@ class DatabaseSeeder extends Seeder
         $seeder = Database::seeder();
         $seeder->call('UsersSeeder');
         $seeder->call('NewsSeeder');
+        $seeder->call('HistorySeeder');
     }
 }

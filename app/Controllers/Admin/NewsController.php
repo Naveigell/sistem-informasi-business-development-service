@@ -81,6 +81,7 @@ class NewsController extends BaseController
         if (!$validator->run($this->request->getVar())) {
             return redirect()->back()->withInput()->with('errors', $validator->getErrors());
         }
+
         if ($thumbnail->isFile()) {
 
             $imageName = str_random(40) . '.' . $thumbnail->getClientExtension();

@@ -56,6 +56,12 @@ $routes->group('admin', function ($routes) {
     $routes->get('news/(:num)/edit', 'Admin\NewsController::edit/$1', ["as" => "admin.news.edit"]);
     $routes->put('news/(:num)', 'Admin\NewsController::update/$1', ["as" => "admin.news.update"]);
     $routes->delete('news/(:num)', 'Admin\NewsController::destroy/$1', ["as" => "admin.news.destroy"]);
+
+    $routes->get('histories/(:num)/edit', 'Admin\HistoryController::edit/$1', ["as" => "admin.histories.edit"]);
+    $routes->put('histories/(:num)', 'Admin\HistoryController::update/$1', ["as" => "admin.histories.update"]);
+
+    $routes->get('vision-missions/(:num)/edit', 'Admin\VisionMissionController::edit/$1', ["as" => "admin.vision-missions.edit"]);
+    $routes->put('vision-missions/(:num)', 'Admin\VisionMissionController::update/$1', ["as" => "admin.vision-missions.update"]);
 });
 
 /*
