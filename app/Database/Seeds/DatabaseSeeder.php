@@ -13,5 +13,7 @@ class DatabaseSeeder extends Seeder
         $seeder->call('UsersSeeder');
         $seeder->call('NewsSeeder');
         $seeder->call('HistorySeeder');
+        $seeder->call('VisionMissionSeeder');
+        $seeder->call('RegionalCoordinatorSeeder');
     }
 }

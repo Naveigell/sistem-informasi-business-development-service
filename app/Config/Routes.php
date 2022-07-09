@@ -62,6 +62,13 @@ $routes->group('admin', function ($routes) {
 
     $routes->get('vision-missions/(:num)/edit', 'Admin\VisionMissionController::edit/$1', ["as" => "admin.vision-missions.edit"]);
     $routes->put('vision-missions/(:num)', 'Admin\VisionMissionController::update/$1', ["as" => "admin.vision-missions.update"]);
+
+    $routes->get('regional-coordinators', 'Admin\RegionalCoordinatorController::index', ["as" => "admin.regional-coordinators.index"]);
+    $routes->post('regional-coordinators', 'Admin\RegionalCoordinatorController::store', ["as" => "admin.regional-coordinators.store"]);
+    $routes->get('regional-coordinators/create', 'Admin\RegionalCoordinatorController::create', ["as" => "admin.regional-coordinators.create"]);
+    $routes->get('regional-coordinators/(:num)/edit', 'Admin\RegionalCoordinatorController::edit/$1', ["as" => "admin.regional-coordinators.edit"]);
+    $routes->put('regional-coordinators/(:num)', 'Admin\RegionalCoordinatorController::update/$1', ["as" => "admin.regional-coordinators.update"]);
+    $routes->delete('regional-coordinators/(:num)', 'Admin\RegionalCoordinatorController::destroy/$1', ["as" => "admin.regional-coordinators.destroy"]);
 });
 
 /*
