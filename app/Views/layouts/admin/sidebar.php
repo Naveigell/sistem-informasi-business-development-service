@@ -17,7 +17,8 @@
             <li class="menu-header">Organization</li>
             <li><a class="nav-link" href="<?= route_to('admin.histories.edit', 1); ?>"><i class="fa fa-ankh"></i> <span>Sejarah</span></a></li>
             <li><a class="nav-link" href="<?= route_to('admin.vision-missions.edit', 1); ?>"><i class="fa fa-flag"></i> <span>Visi & Misi</span></a></li>
-            <li><a class="nav-link" href="<?= route_to('admin.regional-coordinators.index'); ?>"><i class="fa fa-globe"></i> <span>Pengurus Wilayah</span></a></li>
+            <li><a class="nav-link" href="<?= route_to('admin.national-boards.edit', 1); ?>"><i class="fa fa-globe"></i> <span>Perwakilan Nasional</span></a></li>
+            <li><a class="nav-link" href="<?= route_to('admin.regional-coordinators.index', 1); ?>"><i class="fa fa-bullseye"></i> <span>Koordinator Wilayah</span></a></li>
         </ul>
     </aside>
 </div>

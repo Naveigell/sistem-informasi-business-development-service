@@ -33,9 +33,12 @@ $routes->set404Override();
  * --------------------------------------------------------------------
  */
 
+$routes->get('/admin/login', 'Auth\AdminAuthController::index', ["as" => "admin.auth.login.index"]);
+$routes->post('/admin/login', 'Auth\AdminAuthController::store', ["as" => "admin.auth.login.store"]);
+
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->group('admin', function ($routes) {
+$routes->group('admin', ['filter' => 'adminfilter'], function ($routes) {
     $routes->get('consultants', 'Admin\ConsultantController::index', ["as" => "admin.consultants.index"]);
     $routes->post('consultants', 'Admin\ConsultantController::store', ["as" => "admin.consultants.store"]);
     $routes->get('consultants/create', 'Admin\ConsultantController::create', ["as" => "admin.consultants.create"]);
@@ -69,7 +72,12 @@ $routes->group('admin', function ($routes) {
     $routes->get('regional-coordinators/(:num)/edit', 'Admin\RegionalCoordinatorController::edit/$1', ["as" => "admin.regional-coordinators.edit"]);
     $routes->put('regional-coordinators/(:num)', 'Admin\RegionalCoordinatorController::update/$1', ["as" => "admin.regional-coordinators.update"]);
     $routes->delete('regional-coordinators/(:num)', 'Admin\RegionalCoordinatorController::destroy/$1', ["as" => "admin.regional-coordinators.destroy"]);
+
+    $routes->get('national-boards/(:num)/edit', 'Admin\NationalBoardController::edit/$1', ["as" => "admin.national-boards.edit"]);
+    $routes->put('national-boards/(:num)', 'Admin\NationalBoardController::update/$1', ["as" => "admin.national-boards.update"]);
 });
+
+$routes->get('/logout', 'Auth\AuthController::logout', ["as" => "logout"]);
 
 /*
  * --------------------------------------------------------------------

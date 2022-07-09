@@ -13,6 +13,12 @@
     <?= $this->include('layouts/admin/style'); ?>
     <?= $this->renderSection('content-style') ?>
 
+    <style>
+        .ck-content p {
+            margin: 0;
+        }
+    </style>
+
 </head>
 
 <body>

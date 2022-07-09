@@ -130,9 +130,4 @@ class RegionalCoordinatorController extends BaseController
 
         return redirect()->route('admin.regional-coordinators.index')->withInput()->with('success', 'Koordinator Wilayah berhasil dihapus');
     }
-
-    public function validator()
-    {
-
-    }
 }
