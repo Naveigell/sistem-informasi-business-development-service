@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $seeder->call('VisionMissionSeeder');
         $seeder->call('RegionalCoordinatorSeeder');
         $seeder->call('NationalBoardSeeder');
+        $seeder->call('ActivityProgramSeeder');
     }
 }

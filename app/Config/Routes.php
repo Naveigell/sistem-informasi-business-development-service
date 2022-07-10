@@ -73,6 +73,13 @@ $routes->group('admin', ['filter' => 'adminfilter'], function ($routes) {
     $routes->put('regional-coordinators/(:num)', 'Admin\RegionalCoordinatorController::update/$1', ["as" => "admin.regional-coordinators.update"]);
     $routes->delete('regional-coordinators/(:num)', 'Admin\RegionalCoordinatorController::destroy/$1', ["as" => "admin.regional-coordinators.destroy"]);
 
+    $routes->get('activity-programs', 'Admin\ActivityProgramController::index', ["as" => "admin.activity-programs.index"]);
+    $routes->post('activity-programs', 'Admin\ActivityProgramController::store', ["as" => "admin.activity-programs.store"]);
+    $routes->get('activity-programs/create', 'Admin\ActivityProgramController::create', ["as" => "admin.activity-programs.create"]);
+    $routes->get('activity-programs/(:num)/edit', 'Admin\ActivityProgramController::edit/$1', ["as" => "admin.activity-programs.edit"]);
+    $routes->put('activity-programs/(:num)', 'Admin\ActivityProgramController::update/$1', ["as" => "admin.activity-programs.update"]);
+    $routes->delete('activity-programs/(:num)', 'Admin\ActivityProgramController::destroy/$1', ["as" => "admin.activity-programs.destroy"]);
+
     $routes->get('national-boards/(:num)/edit', 'Admin\NationalBoardController::edit/$1', ["as" => "admin.national-boards.edit"]);
     $routes->put('national-boards/(:num)', 'Admin\NationalBoardController::update/$1', ["as" => "admin.national-boards.update"]);
 });
