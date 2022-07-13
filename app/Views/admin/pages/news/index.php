@@ -18,6 +18,7 @@ Berita
                 <thead>
                 <tr>
                     <th>Thumbnail</th>
+                    <th>Kategori</th>
                     <th>Judul</th>
                     <th>Isi Berita</th>
                     <th>Aksi</th>
@@ -26,13 +27,19 @@ Berita
                 <tbody>
                 <?php /** @var array $news */
                 foreach ($news as $data): ?>
+
+                    <?php
+                        $category = (new \App\Models\NewsCategory())->where('id', $data['category_id'])->first();
+                    ?>
+
                     <tr>
                         <td class="col-2">
                             <img alt="image" src="<?= base_url('/uploads/images/news/' . $data['thumbnail']); ?>" width="250" height="250">
                         </td>
-                        <td><?= $data['title']; ?></td>
+                        <td><?= $category['name']; ?></td>
+                        <td class="col-1"><?= $data['title']; ?></td>
                         <td class="col-8"><?= $data['description']; ?></td>
-                        <td>
+                        <td class="col-2">
                             <a href="<?= route_to('admin.news.edit', $data['id']); ?>" class="btn btn-warning"><i class="fa fa-pen"></i></a>
                             <button data-target="#deleteModal" data-url="<?= route_to('admin.news.destroy', $data['id']); ?>" data-toggle="modal" class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></button>
                         </td>

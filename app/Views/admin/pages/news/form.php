@@ -42,6 +42,20 @@
                     <input name="title" type="text" class="form-control" value="<?= @$news ? $news['title'] : ''; ?>">
                 </div>
                 <div class="form-group">
+                    <label>Kategori Berita</label>
+                    <select class="form-control" name="category_id" id="">
+                        <option value="">-- Nothing selected --</option>
+                        <?php /** @var array $categories */
+                        foreach ($categories as $category): ?>
+                            <option <?php if (@$news): ?>
+                                <?php if ($news['id'] == $category['id']): ?>
+                                    selected
+                                <?php endif; ?>
+                            <?php endif; ?> value="<?= $category['id']; ?>"><?= $category['name']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Deskripsi</label>
                     <textarea name="description" class="form-control" id="editor" cols="30" rows="10"><?= @$news ? $news['description'] : ''; ?></textarea>
                 </div>

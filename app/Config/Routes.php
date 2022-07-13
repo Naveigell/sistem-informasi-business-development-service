@@ -60,6 +60,13 @@ $routes->group('admin', ['filter' => 'adminfilter'], function ($routes) {
     $routes->put('news/(:num)', 'Admin\NewsController::update/$1', ["as" => "admin.news.update"]);
     $routes->delete('news/(:num)', 'Admin\NewsController::destroy/$1', ["as" => "admin.news.destroy"]);
 
+    $routes->get('news-categories', 'Admin\NewsCategoryController::index', ["as" => "admin.news-categories.index"]);
+    $routes->post('news-categories', 'Admin\NewsCategoryController::store', ["as" => "admin.news-categories.store"]);
+    $routes->get('news-categories/create', 'Admin\NewsCategoryController::create', ["as" => "admin.news-categories.create"]);
+    $routes->get('news-categories/(:num)/edit', 'Admin\NewsCategoryController::edit/$1', ["as" => "admin.news-categories.edit"]);
+    $routes->put('news-categories/(:num)', 'Admin\NewsCategoryController::update/$1', ["as" => "admin.news-categories.update"]);
+    $routes->delete('news-categories/(:num)', 'Admin\NewsCategoryController::destroy/$1', ["as" => "admin.news-categories.destroy"]);
+
     $routes->get('histories/(:num)/edit', 'Admin\HistoryController::edit/$1', ["as" => "admin.histories.edit"]);
     $routes->put('histories/(:num)', 'Admin\HistoryController::update/$1', ["as" => "admin.histories.update"]);
 
@@ -85,6 +92,13 @@ $routes->group('admin', ['filter' => 'adminfilter'], function ($routes) {
 });
 
 $routes->get('/logout', 'Auth\AuthController::logout', ["as" => "logout"]);
+$routes->get('/', 'Home::index', ["as" => "home"]);
+$routes->get('/organization/history', 'Member\OrganizationController::history', ["as" => "member.organization.history"]);
+$routes->get('/organization/vision-mission', 'Member\OrganizationController::visionMission', ["as" => "member.organization.vision-mission"]);
+$routes->get('/organization/national-boards', 'Member\OrganizationController::nationalBoard', ["as" => "member.organization.national-boards"]);
+$routes->get('/organization/regional-coordinators', 'Member\OrganizationController::regionalCoordinator', ["as" => "member.organization.regional-coordinators"]);
+
+$routes->get('/activity-programs', 'Member\ActivityProgramController::index', ["as" => "member.activity-programs"]);
 
 /*
  * --------------------------------------------------------------------

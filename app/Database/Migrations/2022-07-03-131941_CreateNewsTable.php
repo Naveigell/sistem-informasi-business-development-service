@@ -15,6 +15,11 @@ class CreateNewsTable extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'category_id' => [
+                'type' => 'BIGINT',
+                'constraint' => 20,
+                'unsigned' => true,
+            ],
             'thumbnail' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
@@ -32,6 +37,7 @@ class CreateNewsTable extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('category_id', 'news_categories', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('news');
     }
 

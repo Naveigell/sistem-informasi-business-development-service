@@ -11,16 +11,24 @@ class RegionalCoordinatorSeeder extends Seeder
     {
         (new RegionalCoordinator())->insertBatch([
             [
-                "regional" => "Sumatera Barat",
+                "region"   => "Sumatera Barat",
+                "leader"   => "Bapak Ketuaaa",
+                "phone"    => null,
             ],
             [
-                "regional" => "Sumatera Utara",
+                "region"   => "Sumatera Utara",
+                "leader"   => null,
+                "phone"    => null,
             ],
             [
-                "regional" => "Sumatera Selatan",
+                "region"   => "Sumatera Selatan",
+                "leader"   => null,
+                "phone"    => null,
             ],
             [
-                "regional" => "Jakarta Barat",
+                "region"   => "Jakarta Barat",
+                "leader"   => null,
+                "phone"    => "029912834",
             ],
         ]);
     }

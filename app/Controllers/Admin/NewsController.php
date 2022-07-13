@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\News;
+use App\Models\NewsCategory;
 
 class NewsController extends BaseController
 {
@@ -16,13 +17,18 @@ class NewsController extends BaseController
 
     public function create()
     {
-        return view('admin/pages/news/form');
+        $categories = (new NewsCategory())->findAll();
+
+        return view('admin/pages/news/form', compact('categories'));
     }
 
     public function store()
     {
         $validator = \Config\Services::validation();
         $validator->setRules([
+            'category_id' => [
+                'rules' => 'required',
+            ],
             'thumbnail' => [
                 'rules' => 'uploaded[thumbnail]|mime_in[thumbnail,image/png,image/jpg,image/jpeg]',
             ],
@@ -53,14 +59,18 @@ class NewsController extends BaseController
     public function edit($newsId)
     {
         $news = (new News())->where('id', $newsId)->first();
+        $categories = (new NewsCategory())->findAll();
 
-        return view('admin/pages/news/form', compact('news'));
+        return view('admin/pages/news/form', compact('news', 'categories'));
     }
 
     public function update($newsId)
     {
         $thumbnail = $this->request->getFile('thumbnail');
         $rules = [
+            'category_id' => [
+                'rules' => 'required',
+            ],
             'title' => [
                 'rules' => 'required',
             ],
