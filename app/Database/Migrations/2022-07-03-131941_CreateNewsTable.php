@@ -24,6 +24,10 @@ class CreateNewsTable extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
+            'slug' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
             'title' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,

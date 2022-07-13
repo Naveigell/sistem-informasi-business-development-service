@@ -21,7 +21,19 @@
                         </div>
                     </div>
                     <a href="<?= route_to('member.activity-programs'); ?>" class="nav-item nav-link">Aktivitas Kegiatan</a>
-                    <a href="service.html" class="nav-item nav-link">Berita</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Berita</a>
+
+                        <?php
+                            $categories = (new \App\Models\NewsCategory())->findAll();
+                        ?>
+
+                        <div class="dropdown-menu border-0 rounded-0 m-0">
+                            <?php foreach ($categories as $category): ?>
+                                <a href="<?= route_to('member.news-categories.index', $category['slug']); ?>" class="dropdown-item"><?= $category['name']; ?></a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
                     <a href="<?= route_to('member.contact-us'); ?>" class="nav-item nav-link">Kontak Kami</a>
                 </div>
             </div>

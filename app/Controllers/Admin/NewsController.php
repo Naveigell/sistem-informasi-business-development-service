@@ -51,6 +51,7 @@ class NewsController extends BaseController
 
         (new News())->insert(array_merge($this->request->getVar(), [
             "thumbnail" => $imageName,
+            "slug" => str_slug($this->request->getVar('title')),
         ]));
 
         return redirect()->route('admin.news.index')->withInput()->with('success', 'Berita berhasil ditambah');
@@ -100,6 +101,7 @@ class NewsController extends BaseController
 
             (new News())->update($newsId, [
                 "thumbnail" => $imageName,
+                "slug" => str_slug($this->request->getVar('title')),
             ]);
         }
 

@@ -100,6 +100,9 @@ $routes->get('/organization/regional-coordinators', 'Member\OrganizationControll
 
 $routes->get('/activity-programs', 'Member\ActivityProgramController::index', ["as" => "member.activity-programs"]);
 
+$routes->get('/news-categories/(:any)/news/(:any)', 'Member\NewsController::detail/$1/$2', ["as" => "member.news.show"]);
+$routes->get('/news-categories/(:any)', 'Member\NewsController::index/$1', ["as" => "member.news-categories.index"]);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

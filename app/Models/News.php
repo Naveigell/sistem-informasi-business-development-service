@@ -8,5 +8,5 @@ class News extends Model
 {
     protected $table = 'news';
 
-    protected $allowedFields = ['category_id', 'thumbnail', 'title', 'description', 'created_at'];
+    protected $allowedFields = ['category_id', 'thumbnail', 'slug', 'title', 'description', 'created_at'];
 }
