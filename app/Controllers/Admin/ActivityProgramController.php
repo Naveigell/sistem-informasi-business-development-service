@@ -27,7 +27,9 @@ class ActivityProgramController extends BaseController
             return redirect()->back()->withInput()->with('errors', $validator->getErrors());
         }
 
-        (new ActivityProgram())->insert($this->request->getVar());
+        (new ActivityProgram())->insert(array_merge($this->request->getVar(), [
+            "slug" => str_slug($this->request->getVar('title'))
+        ]));
 
         return redirect()->route('admin.activity-programs.index')->with('success', 'Program Kegiatan berhasil ditambah');
     }
@@ -46,7 +48,9 @@ class ActivityProgramController extends BaseController
             return redirect()->back()->withInput()->with('errors', $validator->getErrors());
         }
 
-        (new ActivityProgram())->update($programId, $this->request->getVar());
+        (new ActivityProgram())->update($programId, array_merge($this->request->getVar(), [
+            "slug" => str_slug($this->request->getVar('title'))
+        ]));
 
         return redirect()->route('admin.activity-programs.index')->with('success', 'Program Kegiatan berhasil diubah');
     }

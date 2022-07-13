@@ -98,7 +98,8 @@ $routes->get('/organization/vision-mission', 'Member\OrganizationController::vis
 $routes->get('/organization/national-boards', 'Member\OrganizationController::nationalBoard', ["as" => "member.organization.national-boards"]);
 $routes->get('/organization/regional-coordinators', 'Member\OrganizationController::regionalCoordinator', ["as" => "member.organization.regional-coordinators"]);
 
-$routes->get('/activity-programs', 'Member\ActivityProgramController::index', ["as" => "member.activity-programs"]);
+//$routes->get('/activity-programs', 'Member\ActivityProgramController::index', ["as" => "member.activity-programs"]);
+$routes->get('/activity-programs/(:any)', 'Member\ActivityProgramController::detail/$1', ["as" => "member.activity-programs.show"]);
 
 $routes->get('/news-categories/(:any)/news/(:any)', 'Member\NewsController::detail/$1/$2', ["as" => "member.news.show"]);
 $routes->get('/news-categories/(:any)', 'Member\NewsController::index/$1', ["as" => "member.news-categories.index"]);

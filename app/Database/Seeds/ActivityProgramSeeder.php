@@ -12,6 +12,7 @@ class ActivityProgramSeeder extends Seeder
         $programs = [
             [
                 "title" => "PIPA Pembiayaan",
+                "slug" => "pipa-pembiayaan",
                 "content" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac ligula mi. Pellentesque posuere bibendum sem, ut ultricies arcu. Donec lacinia ipsum mattis, feugiat risus interdum, molestie metus. Nunc aliquet tortor ut lectus elementum egestas. Vestibulum finibus, felis in mattis malesuada, massa ligula mollis dolor, eget ultricies mauris urna sed quam. Nunc pharetra ante et odio vehicula, quis facilisis arcu efficitur. Phasellus sagittis sapien at sapien fermentum, non mollis sapien gravida. Quisque purus mi, scelerisque vel leo in, laoreet ultricies augue. Praesent finibus nisi quis volutpat dapibus. Nam rutrum, nisi eu interdum euismod, magna diam efficitur urna, ut ultricies nisi tortor nec nibh. Cras aliquam risus eget libero blandit facilisis. Morbi at erat ornare, hendrerit lorem at, fermentum magna. Donec condimentum fringilla dolor.
 
 Quisque sed nibh sit amet nibh ullamcorper congue. Nam semper quam pellentesque, tempor ipsum et, porta nunc. Suspendisse potenti. Proin viverra eu tortor sed euismod. Fusce auctor nunc odio, sit amet sollicitudin dui iaculis nec. Suspendisse non ligula lacus. Cras a sapien mauris. Aliquam erat volutpat.
@@ -24,6 +25,7 @@ Aliquam vehicula congue nulla, vel sollicitudin ante commodo fermentum. Ut sed m
             ],
             [
                 "title" => "KLINIK PEMULIHAN BISNIS",
+                "slug" => "klinik-pemulihan-bisnis",
                 "content" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquam tortor ut auctor bibendum. Vestibulum tempus erat vitae egestas blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer a velit nec nulla ultricies mattis et hendrerit nibh. Pellentesque velit ligula, venenatis ut ultrices sed, volutpat vitae purus. Pellentesque finibus pellentesque leo, sed mollis justo faucibus quis. Cras laoreet faucibus sem. Sed eu eros vel urna porta viverra ac quis est. Vivamus non ipsum auctor, fringilla tellus id, vulputate arcu.
 
 Fusce vehicula consectetur lacus at pharetra. Nulla facilisi. Nullam vitae neque a tellus interdum ullamcorper in quis nunc. Sed lacinia quis nunc quis scelerisque. Curabitur interdum velit sit amet nunc placerat scelerisque. Vivamus a lacinia nulla. Pellentesque nec nunc sit amet diam lacinia ultricies. Cras iaculis tristique nulla eget euismod. Quisque sit amet enim non justo semper rhoncus non quis urna. Suspendisse potenti. Pellentesque eleifend iaculis vehicula.

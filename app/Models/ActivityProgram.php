@@ -8,5 +8,5 @@ class ActivityProgram extends Model
 {
     protected $table = 'activity_programs';
 
-    protected $allowedFields = ['title', 'content'];
+    protected $allowedFields = ['slug', 'title', 'content'];
 }

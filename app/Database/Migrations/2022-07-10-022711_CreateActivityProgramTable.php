@@ -15,6 +15,10 @@ class CreateActivityProgramTable extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'slug' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
             'title' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,

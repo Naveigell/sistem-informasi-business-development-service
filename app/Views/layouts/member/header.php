@@ -20,7 +20,19 @@
                             <a href="<?= route_to('member.organization.regional-coordinators'); ?>" class="dropdown-item">Pengurus Korwil</a>
                         </div>
                     </div>
-                    <a href="<?= route_to('member.activity-programs'); ?>" class="nav-item nav-link">Aktivitas Kegiatan</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Aktivitas Kegiatan</a>
+
+                        <?php
+                            $activities = (new \App\Models\ActivityProgram())->findAll();
+                        ?>
+
+                        <div class="dropdown-menu border-0 rounded-0 m-0">
+                            <?php foreach ($activities as $activity): ?>
+                                <a href="<?= route_to('member.activity-programs.show', $activity['slug']); ?>" class="dropdown-item"><?= $activity['title']; ?></a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Berita</a>
 
