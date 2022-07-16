@@ -10,6 +10,6 @@ class AuthController extends BaseController
     {
         session()->destroy();
 
-        return redirect()->route('admin.clients.index');
+        return redirect()->route('home');
     }
 }

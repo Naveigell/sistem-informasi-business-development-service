@@ -92,6 +92,8 @@ $routes->group('admin', ['filter' => 'adminfilter'], function ($routes) {
 });
 
 $routes->get('/logout', 'Auth\AuthController::logout', ["as" => "logout"]);
+$routes->get('/login', 'Auth\MemberAuthController::login', ["as" => "member.auth.login.index"]);
+$routes->post('/login', 'Auth\MemberAuthController::doLogin', ["as" => "member.auth.login.store"]);
 $routes->get('/', 'Home::index', ["as" => "home"]);
 $routes->get('/organization/history', 'Member\OrganizationController::history', ["as" => "member.organization.history"]);
 $routes->get('/organization/vision-mission', 'Member\OrganizationController::visionMission', ["as" => "member.organization.vision-mission"]);
@@ -103,6 +105,9 @@ $routes->get('/activity-programs/(:any)', 'Member\ActivityProgramController::det
 
 $routes->get('/news-categories/(:any)/news/(:any)', 'Member\NewsController::detail/$1/$2', ["as" => "member.news.show"]);
 $routes->get('/news-categories/(:any)', 'Member\NewsController::index/$1', ["as" => "member.news-categories.index"]);
+$routes->get('/chats', 'Member\ChatController::index', ["as" => "member.chats.index"]);
+$routes->get('/chats/(:num)/edit', 'Member\ChatController::edit/$1', ["as" => "member.chats.edit"]);
+$routes->post('/chats/(:num)/store', 'Member\ChatController::store/$1', ["as" => "member.chats.store"]);
 
 /*
  * --------------------------------------------------------------------

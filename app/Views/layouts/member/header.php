@@ -47,6 +47,12 @@
                         </div>
                     </div>
                     <a href="<?= route_to('member.contact-us'); ?>" class="nav-item nav-link">Kontak Kami</a>
+                    <?php if(session()->has('hasLoggedIn')): ?>
+                        <a href="<?= route_to('member.chats.index'); ?>" class="nav-item nav-link">Chat</a>
+                        <a href="<?= route_to('logout'); ?>" class="nav-item nav-link">Logout</a>
+                    <?php else: ?>
+                        <a href="<?= route_to('member.auth.login.index'); ?>" class="nav-item nav-link">Login</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </nav>
