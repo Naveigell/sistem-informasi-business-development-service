@@ -311,7 +311,7 @@
                         </div>
                     </div>
                     <div class="chat-history">
-                        <ul class="m-b-0 auto-scroll" style="height: 500px; padding-right: 10px; padding-left: 10px;">
+                        <ul class="m-b-0 auto-scroll" style="height: 500px; padding-right: 10px; padding-left: 10px;" id="chat-container">
                             <?php /** @var array $chats */
                             foreach($chats as $chat): ?>
                                 <?php if($chat['sender_id'] == session()->get('user')->id): ?>
@@ -332,7 +332,7 @@
                             <?php endforeach; ?>
                         </ul>
                     </div>
-                    <form class="chat-message clearfix" method="post" action="<?= route_to('member.chats.store', $receiver['id']); ?>">
+                    <form class="chat-message clearfix" onsubmit="sendMessage(this); return false;" method="post" action="<?= route_to('member.chats.store', $receiver['id']); ?>">
                         <?= csrf_field(); ?>
                         <?php if ($errors = session()->getFlashdata('errors')): ?>
                             <div class="alert-danger alert text-left">
@@ -347,7 +347,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-paper-plane"></i></span>
                             </div>
-                            <input name="content" type="text" class="form-control" placeholder="Enter text here...">
+                            <input name="content" id="content" type="text" class="form-control" placeholder="Enter text here...">
                         </div>
                     </form>
                 </div>
@@ -363,5 +363,57 @@
     $('.auto-scroll').niceScroll();
 
     $('.auto-scroll').get(1).scrollTop = $('.auto-scroll').get(1).scrollHeight;
+</script>
+<script>
+    function sendMessage(evt) {
+        $.ajax({
+            url: "<?= route_to('member.chats.store', $receiver['id']) ?>",
+            method: "POST",
+            data: {
+                content: $('#content').val(),
+            },
+            success: function (response) {
+                $('#content').val('');
+
+                retrieveMessage();
+            }
+        })
+    }
+
+    function retrieveMessage() {
+        $.ajax({
+            url: "<?= route_to('member.api.v1.chats.show', $receiver['id']) ?>",
+            success: function (response) {
+                var html  = "";
+                var chats = JSON.parse(response);
+
+                for (var chat of chats) {
+                    if (chat.sender_id === '<?= session()->get('user')->id; ?>') {
+                        html += `<li class="clearfix">
+                                        <div class="message-data text-right">
+                                            <span class="message-data-time">${chat.created_at_formatted}</span>
+                                        </div>
+                                        <div class="message other-message float-right">${chat.content}</div>
+                                    </li>`;
+                    } else {
+                        html += `<li class="clearfix">
+                                        <div class="message-data">
+                                            <span class="message-data-time">${chat.created_at_formatted}</span>
+                                        </div>
+                                        <div class="message my-message">${chat.content}</div>
+                                    </li>`;
+                    }
+                }
+
+                $('#chat-container').html(html);
+
+                $('.auto-scroll').get(1).scrollTop = $('.auto-scroll').get(1).scrollHeight;
+            }
+        });
+    }
+
+    setInterval(function () {
+        retrieveMessage();
+    }, 1500);
 </script>
 <?= $this->endSection() ?>

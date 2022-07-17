@@ -109,6 +109,12 @@ $routes->get('/chats', 'Member\ChatController::index', ["as" => "member.chats.in
 $routes->get('/chats/(:num)/edit', 'Member\ChatController::edit/$1', ["as" => "member.chats.edit"]);
 $routes->post('/chats/(:num)/store', 'Member\ChatController::store/$1', ["as" => "member.chats.store"]);
 
+$routes->group('api', function ($routes) {
+    $routes->group('v1', function ($routes) {
+        $routes->get('chats/(:num)/show', 'Api\Member\ChatController::show/$1', ["as" => "member.api.v1.chats.show"]);
+    });
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

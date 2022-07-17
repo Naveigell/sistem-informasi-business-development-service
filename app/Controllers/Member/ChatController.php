@@ -11,10 +11,6 @@ class ChatController extends BaseController
 {
     public function index()
     {
-//        $chats = (new Chat())->whereIn('sender_id', [User::ROLE_CONSULTANT, User::ROLE_CLIENT])
-//                             ->orWhereIn('receiver_id', [User::ROLE_CLIENT, User::ROLE_CONSULTANT])
-//                             ->findAll();
-
         $users = (new User())->whereIn('role', [User::ROLE_CONSULTANT, User::ROLE_CLIENT])->whereNotIn('id', [session()->get('user')->id])->findAll();
 
         return view('member/pages/chat/index', compact('users'));
@@ -51,6 +47,10 @@ class ChatController extends BaseController
             "created_at"  => Time::now()->toDateTimeString(),
         ]));
 
-        return redirect()->route('member.chats.edit', [$userId]);
+        if ($this->request->isAJAX()) {
+            http_response_code(201);
+        } else {
+            return redirect()->route('member.chats.edit', [$userId]);
+        }
     }
 }
