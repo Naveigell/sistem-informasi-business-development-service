@@ -5,6 +5,19 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content-style') ?>
+    <style>
+        .owl-carousel .item {
+            cursor: grab;
+        }
+
+        .owl-carousel .item span {
+            opacity: 0.3;
+        }
+
+        .owl-carousel .item:hover span {
+            opacity: 1;
+        }
+    </style>
 <?= $this->endSection() ?>
 
 <?= $this->section('content-banner') ?>
@@ -23,6 +36,20 @@
 
     <div class="container-fluid py-5">
         <div class="container">
+
+            <div class="owl-carousel owl-theme mb-5">
+                <?php
+                /** @var array $coordinators */
+                foreach ($coordinators as $coordinator): ?>
+                    <div style="background: red; height: 206px" class="item position-relative">
+                        <img src="<?= $coordinator['thumbnail'] ? base_url('/uploads/images/regional-coordinator/' . $coordinator['thumbnail']) : 'https://pertaniansehat.com/v01/wp-content/uploads/2015/08/default-placeholder.png'; ?>"
+                             alt=""
+                             width="100%" height="100%">
+                        <span class="position-absolute bg-dark p-2 text-white" style="bottom: 5px; left: 5px;"><?= $coordinator['region']; ?></span>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
             <h2>Koordinator Wilayah</h2>
             <div>
                 <?php /** @var array $coordinators */
@@ -45,11 +72,22 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content-script') ?>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/lightgallery.min.js" integrity="sha512-FDbnUqS6P7md6VfBoH57otIQB3rwZKvvs/kQ080nmpK876/q4rycGB0KZ/yzlNIDuNc+ybpu0HV3ePdUYfT5cA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/lightgallery.es5.min.js" integrity="sha512-ssPi1cTYTwYV0e6IRdIId4ytENOrTDvixXo8l0DaTBAwYw9yD6rk9HU06pWRCoSWSRKwrucdVS/2fMC1getgcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0/lightgallery.umd.min.js" integrity="sha512-2pp0/kD6a6gBsvL19QqDQPzDAESHtRw5Z+QrcoKfp+DH66Lx88A3QTdT/9NmBfT7ctvka24NgzpYqC4TQLTNQQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
-<!---->
-<!--    <script>-->
-<!--        lightGallery(document.getElementById('anchor-tag'));-->
-<!--    </script>-->
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        })
+    </script>
 <?= $this->endSection() ?>
