@@ -39,6 +39,8 @@ $routes->post('/admin/login', 'Auth\AdminAuthController::store', ["as" => "admin
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->group('admin', ['filter' => 'adminfilter'], function ($routes) {
+    $routes->get('dashboard', 'Admin\DashboardController::index', ["as" => "admin.dashboard.index"]);
+
     $routes->get('consultants', 'Admin\ConsultantController::index', ["as" => "admin.consultants.index"]);
     $routes->post('consultants', 'Admin\ConsultantController::store', ["as" => "admin.consultants.store"]);
     $routes->get('consultants/create', 'Admin\ConsultantController::create', ["as" => "admin.consultants.create"]);
