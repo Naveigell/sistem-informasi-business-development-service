@@ -89,6 +89,13 @@ $routes->group('admin', ['filter' => 'adminfilter'], function ($routes) {
 
     $routes->get('national-boards/(:num)/edit', 'Admin\NationalBoardController::edit/$1', ["as" => "admin.national-boards.edit"]);
     $routes->put('national-boards/(:num)', 'Admin\NationalBoardController::update/$1', ["as" => "admin.national-boards.update"]);
+
+    $routes->get('forums', 'Admin\DiscussionForumController::index', ["as" => "admin.forums.index"]);
+    $routes->post('forums', 'Admin\DiscussionForumController::store', ["as" => "admin.forums.store"]);
+    $routes->get('forums/create', 'Admin\DiscussionForumController::create', ["as" => "admin.forums.create"]);
+    $routes->get('forums/(:num)/edit', 'Admin\DiscussionForumController::edit/$1', ["as" => "admin.forums.edit"]);
+    $routes->put('forums/(:num)', 'Admin\DiscussionForumController::update/$1', ["as" => "admin.forums.update"]);
+    $routes->delete('forums/(:num)', 'Admin\DiscussionForumController::destroy/$1', ["as" => "admin.forums.destroy"]);
 });
 
 $routes->get('/logout', 'Auth\AuthController::logout', ["as" => "logout"]);
@@ -105,13 +112,19 @@ $routes->get('/activity-programs/(:any)', 'Member\ActivityProgramController::det
 
 $routes->get('/news-categories/(:any)/news/(:any)', 'Member\NewsController::detail/$1/$2', ["as" => "member.news.show"]);
 $routes->get('/news-categories/(:any)', 'Member\NewsController::index/$1', ["as" => "member.news-categories.index"]);
+
 $routes->get('/chats', 'Member\ChatController::index', ["as" => "member.chats.index"]);
 $routes->get('/chats/(:num)/edit', 'Member\ChatController::edit/$1', ["as" => "member.chats.edit"]);
 $routes->post('/chats/(:num)/store', 'Member\ChatController::store/$1', ["as" => "member.chats.store"]);
 
+$routes->get('/forums', 'Member\DiscussionForumController::index', ["as" => "member.forums.index"]);
+$routes->get('/forums/(:num)/edit', 'Member\DiscussionForumController::edit/$1', ["as" => "member.forums.edit"]);
+$routes->post('/forums/(:num)/store', 'Member\DiscussionForumController::store/$1', ["as" => "member.forums.store"]);
+
 $routes->group('api', function ($routes) {
     $routes->group('v1', function ($routes) {
         $routes->get('chats/(:num)/show', 'Api\Member\ChatController::show/$1', ["as" => "member.api.v1.chats.show"]);
+        $routes->get('forums/(:num)/show', 'Api\Member\DiscussionForumController::show/$1', ["as" => "member.api.v1.forums.show"]);
     });
 });
 

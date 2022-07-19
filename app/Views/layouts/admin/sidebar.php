@@ -22,6 +22,8 @@
             <li><a class="nav-link" href="<?= route_to('admin.vision-missions.edit', 1); ?>"><i class="fa fa-flag"></i> <span>Visi & Misi</span></a></li>
             <li><a class="nav-link" href="<?= route_to('admin.national-boards.edit', 1); ?>"><i class="fa fa-globe"></i> <span>Perwakilan Nasional</span></a></li>
             <li><a class="nav-link" href="<?= route_to('admin.regional-coordinators.index'); ?>"><i class="fa fa-bullseye"></i> <span>Koordinator Wilayah</span></a></li>
+            <li class="menu-header">Communication</li>
+            <li><a class="nav-link" href="<?= route_to('admin.forums.index'); ?>"><i class="fa fa-comments"></i> <span>Forum Diskusi</span></a></li>
         </ul>
     </aside>
 </div>

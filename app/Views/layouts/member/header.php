@@ -48,7 +48,13 @@
                     </div>
                     <a href="<?= route_to('member.contact-us'); ?>" class="nav-item nav-link">Kontak Kami</a>
                     <?php if(session()->has('hasLoggedIn')): ?>
-                        <a href="<?= route_to('member.chats.index'); ?>" class="nav-item nav-link">Chat</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Komunikasi</a>
+                            <div class="dropdown-menu border-0 rounded-0 m-0">
+                                <a href="<?= route_to('member.chats.index'); ?>" class="dropdown-item">Chat</a>
+                                <a href="<?= route_to('member.forums.index'); ?>" class="dropdown-item">Forum Diskusi</a>
+                            </div>
+                        </div>
                         <a href="<?= route_to('logout'); ?>" class="nav-item nav-link">Logout</a>
                     <?php else: ?>
                         <a href="<?= route_to('member.auth.login.index'); ?>" class="nav-item nav-link">Login</a>

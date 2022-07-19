@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $seeder->call('RegionalCoordinatorSeeder');
         $seeder->call('NationalBoardSeeder');
         $seeder->call('ActivityProgramSeeder');
+        $seeder->call('DiscussionForumSeeder');
     }
 }
