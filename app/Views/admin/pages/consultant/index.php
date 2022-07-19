@@ -17,6 +17,7 @@
             <table class="table data-table" id="table-2">
                 <thead>
                 <tr>
+                    <th>Avatar</th>
                     <th>Nama</th>
                     <th>Username</th>
                     <th>Email</th>
@@ -29,6 +30,7 @@
                     <?php /** @var array $consultants */
                     foreach ($consultants as $consultant): ?>
                         <tr>
+                            <td><img alt="image" src="<?= $consultant['avatar'] ? base_url('/uploads/images/users/' . $consultant['avatar']) : 'https://trirama.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png'; ?>" width="100" height="100"></td>
                             <td><?= $consultant['name']; ?></td>
                             <td><?= $consultant['username']; ?></td>
                             <td><?= $consultant['email']; ?></td>

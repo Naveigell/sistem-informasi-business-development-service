@@ -17,6 +17,7 @@ Klien
             <table class="table data-table" id="table-2">
                 <thead>
                 <tr>
+                    <th>Avatar</th>
                     <th>Nama</th>
                     <th>Username</th>
                     <th>Email</th>
@@ -29,6 +30,7 @@ Klien
                 <?php /** @var array $clients */
                 foreach ($clients as $client): ?>
                     <tr>
+                        <td><img alt="image" src="<?= $client['avatar'] ? base_url('/uploads/images/users/' . $client['avatar']) : 'https://trirama.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png'; ?>" width="100" height="100"></td>
                         <td><?= $client['name']; ?></td>
                         <td><?= $client['username']; ?></td>
                         <td><?= $client['email']; ?></td>

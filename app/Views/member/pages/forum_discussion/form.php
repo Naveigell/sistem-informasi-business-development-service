@@ -319,7 +319,7 @@
                                     <li class="clearfix">
                                         <div class="message-data text-right">
                                             <span class="message-data-time"><?= date('d F Y - H:i', strtotime($chat['created_at'])); ?></span>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar"> <br>
+                                            <img width="40px" height="40px" src="<?= session()->get('user')->avatar ? base_url('/uploads/images/users/' . session()->get('user')->avatar) : 'https://trirama.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png'; ?>" alt="avatar"> <br>
                                             <span class="text text-muted" style="font-size: 12px;"><?= session()->get('user')->name; ?></span>
                                         </div>
                                         <div class="message other-message float-right"><?= $chat['content']; ?></div>
@@ -327,7 +327,7 @@
                                 <?php else: ?>
                                     <li class="clearfix">
                                         <div class="message-data">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                            <img width="40px" height="40px" src="<?= $user['avatar'] ? base_url('/uploads/images/users/' . $user['avatar']) : 'https://trirama.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png'; ?>" alt="avatar">
                                             <span class="message-data-time"><?= date('d F Y - H:i', strtotime($chat['created_at'])); ?></span>
                                             <br>
                                             <span class="text text-muted" style="font-size: 12px;"><?= $user['name']; ?></span>
@@ -400,7 +400,7 @@
                         html += `<li class="clearfix">
                                         <div class="message-data text-right">
                                             <span class="message-data-time">${chat.created_at_formatted}</span>
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar"> <br>
+                                            <img width="40px" height="40px" src="${chat.user.avatar_url}" alt="avatar"> <br>
                                             <span class="text text-muted" style="font-size: 12px;"><?= session()->get('user')->name; ?></span>
                                         </div>
                                         <div class="message other-message float-right">${chat.content}</div>
@@ -408,7 +408,7 @@
                     } else {
                         html += `<li class="clearfix">
                                         <div class="message-data">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                            <img width="40px" height="40px" src="${chat.user.avatar_url}" alt="avatar">
                                             <span class="message-data-time">${chat.created_at_formatted}</span>
                                             <br>
                                             <span class="text text-muted" style="font-size: 12px;">${chat.user.name}</span>

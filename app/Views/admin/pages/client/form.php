@@ -26,6 +26,10 @@
                     </div>
                 <?php endif; ?>
                 <div class="form-group">
+                    <label>Avatar</label>
+                    <input name="avatar" type="file" accept="image/png,image/jpeg,image/jpg" class="form-control" value="<?= @$client ? $client['avatar'] : ''; ?>">
+                </div>
+                <div class="form-group">
                     <label>Nama</label>
                     <input name="name" type="text" class="form-control" value="<?= @$client ? $client['name'] : ''; ?>">
                 </div>

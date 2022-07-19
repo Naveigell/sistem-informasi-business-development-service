@@ -16,6 +16,7 @@ class DiscussionForumController extends BaseController
         $chats = array_map(function ($item) {
             $item['created_at_formatted'] = date('d F Y - H:i', strtotime($item['created_at']));
             $item['user']                 = (new User())->where('id', $item['sender_id'])->first();
+            $item['user']['avatar_url']   = $item['user']['avatar'] ? base_url('/uploads/images/users/' . $item['user']['avatar']) : 'https://trirama.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png';
 
             return $item;
         }, $chats);
