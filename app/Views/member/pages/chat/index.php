@@ -277,7 +277,7 @@
                             foreach($users as $user): ?>
                                 <li class="clearfix">
                                     <a href="<?= route_to('member.chats.edit', $user['id']); ?>">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                                        <img width="45px" height="45px" src="<?= $user['avatar'] ? base_url('/uploads/images/users/' . $user['avatar']) : 'https://trirama.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png'; ?>" alt="avatar">
                                         <div class="about">
                                             <div class="name text-dark"><?= ucwords($user['name']); ?></div>
                                             <div class="status"> <i class="fa fa-circle offline"></i> Level : <?= ucwords($user['role']); ?> </div>

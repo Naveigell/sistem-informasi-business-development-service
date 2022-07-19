@@ -53,6 +53,7 @@
                             <div class="dropdown-menu border-0 rounded-0 m-0">
                                 <a href="<?= route_to('member.chats.index'); ?>" class="dropdown-item">Chat</a>
                                 <a href="<?= route_to('member.forums.index'); ?>" class="dropdown-item">Forum Diskusi</a>
+                                <a href="<?= route_to('member.profiles.index'); ?>" class="dropdown-item">Profil Member</a>
                             </div>
                         </div>
                         <a href="<?= route_to('logout'); ?>" class="nav-item nav-link">Logout</a>

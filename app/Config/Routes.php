@@ -121,6 +121,8 @@ $routes->get('/forums', 'Member\DiscussionForumController::index', ["as" => "mem
 $routes->get('/forums/(:num)/edit', 'Member\DiscussionForumController::edit/$1', ["as" => "member.forums.edit"]);
 $routes->post('/forums/(:num)/store', 'Member\DiscussionForumController::store/$1', ["as" => "member.forums.store"]);
 
+$routes->get('/profiles', 'Member\ProfileController::index', ["as" => "member.profiles.index"]);
+
 $routes->group('api', function ($routes) {
     $routes->group('v1', function ($routes) {
         $routes->get('chats/(:num)/show', 'Api\Member\ChatController::show/$1', ["as" => "member.api.v1.chats.show"]);

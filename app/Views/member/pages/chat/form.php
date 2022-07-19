@@ -275,7 +275,7 @@
                         foreach($users as $data): ?>
                             <li class="clearfix">
                                 <a href="<?= route_to('member.chats.edit', $data['id']); ?>">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                                    <img width="45px" height="45px" src="<?= $data['avatar'] ? base_url('/uploads/images/users/' . $data['avatar']) : 'https://trirama.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png'; ?>" alt="avatar">
                                     <div class="about">
                                         <div class="name text-dark"><?= ucwords($data['name']); ?></div>
                                         <div class="status"> <i class="fa fa-circle offline"></i> Level : <?= ucwords($data['role']); ?> </div>
@@ -289,15 +289,15 @@
                     <div class="chat-header clearfix">
                         <div class="row">
                             <div class="col-lg-6">
+                                <?php
+                                /**
+                                 * @var array $receiver
+                                 */
+                                ?>
                                 <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                    <img width="40px" height="40px" src="<?= $receiver['avatar'] ? base_url('/uploads/images/users/' . $receiver['avatar']) : 'https://trirama.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png'; ?>" alt="avatar">
                                 </a>
                                 <div class="chat-about">
-                                    <?php
-                                    /**
-                                     * @var array $receiver
-                                     */
-                                    ?>
                                     <h6 class="m-b-0"><?= ucwords($receiver['name']); ?></h6>
                                     <small>Level : <?= ucwords($receiver['role']); ?></small>
                                 </div>
