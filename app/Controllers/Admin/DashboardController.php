@@ -3,7 +3,10 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\ActivityProgram;
 use App\Models\DiscussionForum;
+use App\Models\News;
+use App\Models\NewsCategory;
 use App\Models\User;
 
 class DashboardController extends BaseController
@@ -22,6 +25,18 @@ class DashboardController extends BaseController
             (new DiscussionForum())->findAll()
         );
 
-        return view('admin/pages/dashboard/index', compact('totalConsultants', 'totalClients', 'totalForums'));
+        $totalActivities  = count(
+            (new ActivityProgram())->findAll()
+        );
+
+        $totalNews        = count(
+            (new News())->findAll()
+        );
+
+        $totalNewsCategories = count(
+            (new NewsCategory())->findAll()
+        );
+
+        return view('admin/pages/dashboard/index', compact('totalConsultants', 'totalClients', 'totalForums', 'totalActivities', 'totalNews', 'totalNewsCategories'));
     }
 }

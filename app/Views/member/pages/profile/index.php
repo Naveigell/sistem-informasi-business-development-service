@@ -32,9 +32,6 @@
                         </div>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" style="height: 100px;"><i class="fa fa-envelope float-right"></i>Email :
-                            <br><a href="#"><?= $client['email']; ?></a></li>
-                        <li class="list-group-item"><i class="fa fa-phone float-right"></i>Telp : <?= $client['phone']; ?></li>
                     </ul>
                     <div class="card-body">
                         <div class="float-right btn-group btn-group-sm">
@@ -61,8 +58,6 @@
                         </div>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" style="height: 100px;"><i class="fa fa-envelope float-right"></i>Email :<br><a href="#"><?= $consultant['email']; ?></a></li>
-                        <li class="list-group-item"><i class="fa fa-phone float-right"></i>Telp : <?= $consultant['phone']; ?></li>
                     </ul>
                     <div class="card-body">
                         <div class="float-right btn-group btn-group-sm">

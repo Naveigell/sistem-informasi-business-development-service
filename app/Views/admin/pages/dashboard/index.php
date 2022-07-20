@@ -52,4 +52,51 @@ Dashboard
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+            <div class="card card-statistic-1">
+                <div class="card-icon bg-success">
+                    <i style="font-size: 22px; color: #fff;" class="fa fa-calendar"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header">
+                        <h4>Total Aktivitas Kegiatan</h4>
+                    </div>
+                    <div class="card-body">
+                        <?= $totalActivities; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+            <div class="card card-statistic-1">
+                <div class="card-icon bg-info">
+                    <i style="font-size: 22px; color: #fff;" class="fa fa-newspaper"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header">
+                        <h4>Total Berita</h4>
+                    </div>
+                    <div class="card-body">
+                        <?= $totalNews; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+            <div class="card card-statistic-1">
+                <div class="card-icon bg-light">
+                    <i style="font-size: 22px; color: #fff;" class="fa fa-list"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header">
+                        <h4>Total Kategori Berita</h4>
+                    </div>
+                    <div class="card-body">
+                        <?= $totalNewsCategories; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <?= $this->endSection() ?>
