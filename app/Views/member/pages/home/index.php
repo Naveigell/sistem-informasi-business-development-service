@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/member/member') ?>
 
+<?= $this->section('page-title') ?>
+    Beranda
+<?= $this->endSection() ?>
+
 <?= $this->section('content-title') ?>
     Beranda
 <?= $this->endSection() ?>

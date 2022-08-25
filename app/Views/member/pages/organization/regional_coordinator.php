@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/member/member') ?>
 
+<?= $this->section('page-title') ?>
+    Koordinator Wilayah
+<?= $this->endSection() ?>
+
 <?= $this->section('content-title') ?>
     Koordinator Wilayah
 <?= $this->endSection() ?>

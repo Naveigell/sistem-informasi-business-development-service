@@ -1,5 +1,15 @@
 <?= $this->extend('layouts/member/member') ?>
 
+<?= $this->section('page-title') ?>
+<?php
+/**
+ * @var array $receiver
+ */
+?>
+
+Chat dengan <?= ucwords($receiver['name']); ?>
+<?= $this->endSection() ?>
+
 <?= $this->section('content-banner') ?>
 
 <div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5">
@@ -289,11 +299,6 @@
                     <div class="chat-header clearfix">
                         <div class="row">
                             <div class="col-lg-6">
-                                <?php
-                                /**
-                                 * @var array $receiver
-                                 */
-                                ?>
                                 <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
                                     <img width="40px" height="40px" src="<?= $receiver['avatar'] ? base_url('/uploads/images/users/' . $receiver['avatar']) : 'https://trirama.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png'; ?>" alt="avatar">
                                 </a>

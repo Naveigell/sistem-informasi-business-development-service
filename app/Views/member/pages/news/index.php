@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/member/member') ?>
 
+<?= $this->section('page-title') ?>
+Berita <?= /** @var array $category */ $category['name']; ?>
+<?= $this->endSection() ?>
+
 <?= $this->section('content-banner') ?>
 
     <div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5">
@@ -9,7 +13,7 @@
             <p class="m-0 px-2">/</p>
             <p class="m-0">Berita</p>
             <p class="m-0 px-2">/</p>
-            <p class="m-0"><?= /** @var array $category */ $category['name']; ?></p>
+            <p class="m-0"><?= $category['name']; ?></p>
         </div>
     </div>
 

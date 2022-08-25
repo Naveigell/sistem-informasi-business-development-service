@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/member/member') ?>
 
+<?= $this->section('page-title') ?>
+    Sejarah
+<?= $this->endSection() ?>
+
 <?= $this->section('content-title') ?>
     Sejarah
 <?= $this->endSection() ?>

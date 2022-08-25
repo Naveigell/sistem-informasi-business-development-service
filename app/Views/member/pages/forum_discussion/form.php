@@ -1,5 +1,14 @@
 <?= $this->extend('layouts/member/member') ?>
 
+<?= $this->section('page-title') ?>
+<?php
+/**
+ * @var array $forum
+ */
+?>
+Forum <?= ucwords($forum['forum_name']); ?>
+<?= $this->endSection() ?>
+
 <?= $this->section('content-banner') ?>
 
 <div class="container-fluid page-header d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5 mb-5">

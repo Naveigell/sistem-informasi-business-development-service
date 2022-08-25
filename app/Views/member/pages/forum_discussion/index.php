@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/member/member') ?>
 
+<?= $this->section('page-title') ?>
+Forum Diskusi
+<?= $this->endSection() ?>
+
 <?= $this->section('content-style') ?>
 <style>
     .chat-app .people-list {
