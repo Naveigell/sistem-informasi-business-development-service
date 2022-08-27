@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/admin/admin') ?>
 
+<?= $this->section('page-title') ?>
+    Konsultan
+<?= $this->endSection() ?>
+
 <?= $this->section('content-title') ?>
     Konsultan
 <?= $this->endSection() ?>

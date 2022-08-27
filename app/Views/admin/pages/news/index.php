@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/admin/admin') ?>
 
+<?= $this->section('page-title') ?>
+Berita
+<?= $this->endSection() ?>
+
 <?= $this->section('content-title') ?>
 Berita
 <?= $this->endSection() ?>

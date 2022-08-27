@@ -79,7 +79,7 @@
                         <i class="fa fa-2x fa-envelope-open text-primary mr-3"></i>
                         <div class="d-flex flex-column">
                             <h5 class="font-weight-bold">Email Kami</h5>
-                            <p class="m-0">info@example.com</p>
+                            <p class="m-0">abdsikorwilbali@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         <i class="fas fa-2x fa-phone-alt text-primary mr-3"></i>
                         <div class="d-flex flex-column">
                             <h5 class="font-weight-bold">Telp Kami</h5>
-                            <p class="m-0">+012 345 6789</p>
+                            <p class="m-0">+62 822-4796-9229</p>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/admin/admin') ?>
 
+<?= $this->section('page-title') ?>
+    Program ABDSI
+<?= $this->endSection() ?>
+
 <?= $this->section('content-title') ?>
     Program Kegiatan ABDSI
 <?= $this->endSection() ?>

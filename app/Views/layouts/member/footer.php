@@ -22,8 +22,8 @@
             <h5 class="font-weight-bold text-primary mb-4">Get In Touch</h5>
             <p>Anda dapat menghubungi kami melalui kontak berikut.</p>
             <p><i class="fa fa-map-marker-alt text-primary mr-2"></i>Jl. Palapa Raya No.5, Sesetan, Denpasar Selatan, Kota Denpasar, Bali 80223</p>
-            <p><i class="fa fa-phone-alt text-primary mr-2"></i>+012 345 67890</p>
-            <p><i class="fa fa-envelope text-primary mr-2"></i>info@example.com</p>
+            <p><i class="fa fa-phone-alt text-primary mr-2"></i>+62 822-4796-9229</p>
+            <p><i class="fa fa-envelope text-primary mr-2"></i>abdsikorwilbali@gmail.com</p>
         </div>
     </div>
 </div>

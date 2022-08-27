@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/admin/admin') ?>
 
+<?= $this->section('page-title') ?>
+Forum Diskusi
+<?= $this->endSection() ?>
+
 <?= $this->section('content-title') ?>
 Forum Diskusi
 <?= $this->endSection() ?>

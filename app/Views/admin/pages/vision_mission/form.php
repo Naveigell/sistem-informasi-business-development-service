@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/admin/admin') ?>
 
+<?= $this->section('page-title') ?>
+    Visi Misi
+<?= $this->endSection() ?>
+
 <?= $this->section('content-title') ?>
     Visi Misi
 <?= $this->endSection() ?>

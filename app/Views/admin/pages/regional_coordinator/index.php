@@ -1,5 +1,9 @@
 <?= $this->extend('layouts/admin/admin') ?>
 
+<?= $this->section('page-title') ?>
+Koordinator Wilayah
+<?= $this->endSection() ?>
+
 <?= $this->section('content-title') ?>
     Pengurus Wilayah
 <?= $this->endSection() ?>
